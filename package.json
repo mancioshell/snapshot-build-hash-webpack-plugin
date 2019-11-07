@@ -1,0 +1,20 @@
+{
+  "name": "snapshot-build-hash-webpack-plugin",
+  "version": "1.0.0",
+  "description": "A Webpack plugin which take build hash and append to current version in package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "Webpack",
+    "Snapshot",
+    "Version",
+    "Plugin"
+  ],
+  "author": "Alessandro Mancini <dott.alessandro.mancini@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "git-branch-is": "^3.0.0"
+  }
+}
