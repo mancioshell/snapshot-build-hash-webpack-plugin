@@ -36,9 +36,13 @@ class SnapshotBuildHashPlugin {
                             packageFile.version = `${release[1]}-SNAPSHOT.${stats.hash}`
                             packageLockFile.version = `${release[1]}-SNAPSHOT.${stats.hash}`
 
-                            compiler.outputFileSystem.writeFile(packagePath, JSON.stringify(packageFile, null, 2), callback);
-                            compiler.outputFileSystem.writeFile(packageLockPath, JSON.stringify(packageLockFile, null, 2), callback);
+                            compiler.outputFileSystem.writeFile(packagePath, JSON.stringify(packageFile, null, 2), () =>{
+                                compiler.outputFileSystem.writeFile(packageLockPath, JSON.stringify(packageLockFile, null, 2), callback);
+                            });
+                           
                         }
+                    }else{
+                        callback()
                     }
                 },
                 err => console.error(err)
