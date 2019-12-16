@@ -33,8 +33,9 @@ class SnapshotBuildHashPlugin {
                         const release = /^([0-9]\.[0-9]\.[0-9])($|-SNAPSHOT.*$)/.exec(currentVersion)
 
                         if (release) {
-                            packageFile.version = `${release[1]}-SNAPSHOT.${stats.hash}`
-                            packageLockFile.version = `${release[1]}-SNAPSHOT.${stats.hash}`
+                            const version = `${release[1]}-SNAPSHOT.${stats.hash}.${new Date().getTime()}`
+                            packageFile.version = version
+                            packageLockFile.version = version
 
                             compiler.outputFileSystem.writeFile(packagePath, JSON.stringify(packageFile, null, 2), () =>{
                                 compiler.outputFileSystem.writeFile(packageLockPath, JSON.stringify(packageLockFile, null, 2), callback);
