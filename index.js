@@ -27,7 +27,7 @@ class SnapshotBuildHashPlugin {
                 timings: false
             });
 
-            gitBranchIs(branchName => /^master$|^release/.test(branchName)).then(
+            gitBranchIs(branchName => /^master$|^release$|^hotfix/.test(branchName)).then(
                 result => {
                     if (!result) {
                         const release = /^([0-9]\.[0-9]\.[0-9])($|-SNAPSHOT.*$)/.exec(currentVersion)
