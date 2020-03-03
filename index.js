@@ -33,7 +33,7 @@ class SnapshotBuildHashPlugin {
                         const release = /^([0-9]\.[0-9]\.[0-9])($|-SNAPSHOT.*$)/.exec(currentVersion)
 
                         if (release) {
-                            const version = `${release[1]}-SNAPSHOT.${stats.hash}.${new Date().getTime()}`
+                            const version = `${release[1]}-SNAPSHOT.${stats.hash}`
                             packageFile.version = version
                             packageLockFile.version = version
 

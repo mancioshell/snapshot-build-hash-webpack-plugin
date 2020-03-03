@@ -1,6 +1,6 @@
 {
   "name": "snapshot-build-hash-webpack-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Webpack plugin which take build hash and append to current version in package.json",
   "main": "index.js",
   "scripts": {
